@@ -8,9 +8,11 @@ const Showdata = () => {
   const logo = {
     width: 124,
     topBarSource:
-      "https://cdn.shopify.com/s/files/1/0446/6937/files/jaded-pixel-logo-color.svg?6215648040070010999",
+      "https://d3vlhkqyz4y38a.cloudfront.net/skin/frontend/cedcomnew/default/images/header/logo/ced-logo-web.svg",
+    contextualSaveBarSource:
+      "https://d3vlhkqyz4y38a.cloudfront.net/skin/frontend/cedcomnew/default/images/header/logo/ced-logo-web.svg",
     url: "http://jadedpixel.com",
-    accessibilityLabel: "Jaded Pixel",
+    accessibilityLabel: "Cedcommerce",
   };
   const topBarMarkup = <TopBar userMenu={state} />;
   return (

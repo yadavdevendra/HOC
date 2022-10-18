@@ -4,8 +4,6 @@ import { FormLayout, AppProvider, TextField, Button, Page, Frame } from "@shopif
 
 function Login(props) {
  const {Username,handleLogin,setUsername}= props;
-
-
   return (
     <div>
       <AppProvider>
