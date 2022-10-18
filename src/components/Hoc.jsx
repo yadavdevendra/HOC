@@ -1,33 +1,19 @@
+import { AppProvider } from "@shopify/polaris";
 import React, { useState } from "react";
-import { FormLayout, AppProvider, TextField, Button } from "@shopify/polaris";
+import { useNavigate } from "react-router-dom";
 const HighOrderComponents = (WrappedComponents) => {
-  function Hoc(props) {
+  function Hoc() {
     const [Username, setUsername] = useState("");
-     const [Username1, setUsername1] = useState("");
+    const navigate = useNavigate();
     function handleLogin() {
-      setUsername1(Username)
+      navigate("/show",{state:Username})
     }
     return (
-      <>
-        <WrappedComponents
-          Username={Username1}
-          handleLogin={handleLogin}
-          setUsername={setUsername}
-          {...props}
-        />
-        <AppProvider>
-          <FormLayout>
-            <TextField
-              value={Username}
-              type="UserName"
-              label="User Name"
-              onChange={(e) => setUsername(e)}
-              autoComplete="username"
-            />
-          </FormLayout>
-          <Button onClick={handleLogin}>Login</Button>
-        </AppProvider>
-      </>
+      <WrappedComponents
+        Username={Username}
+        handleLogin={handleLogin}
+        setUsername={setUsername}
+      />
     );
   }
 
